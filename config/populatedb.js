@@ -4,7 +4,7 @@
 // admin is the only special user who can delete msgs.
 
 /* DB STRUCTURE
-*   TABLE session (its vals will b init by app.js)
+*   TABLE session (alr created w terminal cmd from connect-pg-simple docs)
 *   TABLE users:
 *    id, first name, last name, usernm/email, 
 *    pwd, (membership) status, admin (BOOL)

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Members Page</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <h1>Create an account to become a member!</h1>
+
+    <%- include("partials/errors.ejs") %>
+
+    <form action="/signup" method="POST">
+        <label for="fname">First Name: </label>
+        <input id="fname" name="fname" type="text" 
+            value="<%= (typeof prev !== 'undefined') ? prev.fname : '' %>" required />
+
+        <label for="lname">Last Name: </label>
+        <input id="lname" name="lname" type="text" 
+            value="<%= (typeof prev !== 'undefined') ? prev.lname : '' %>" required />
+
+        <label for="email">Email: </label>
+        <input id="email" name="email" type="text" 
+            value="<%= (typeof prev !== 'undefined') ? prev.email : '' %>" required />
+
+        <label for="password">Password: </label>
+        <input id="password" name="password" type="password" required />
+        
+        <button class="margin-bottom-20" type="submit">Sign Up</button>
+    </form>
+
+    <a href="/">Back to home</a>
+</body> 
+</html>

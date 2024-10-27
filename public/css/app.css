@@ -1,5 +1,32 @@
+
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 2em;
     background-color: rgb(64, 64, 67);
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: white;
+}
+
+button {
+    /* align at start so btn width matches its text content */
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+form > input {
+    max-width: 200px;
 }

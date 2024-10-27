@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <form></form>
-    <!-- <a href="signup.ejs">Create an account here.<a> -->
+    <form action="/login" method="POST">
+        <label for="email">Email: </label>
+        <input id="email" name="email" type="text" />
+        <label for="password">Password: </label>
+        <input id="password" name="password" type="password" />
+        <button class="margin-bottom-20">Log In</button>
+    </form>
+    <a href="/signup">Create an account here.<a>
 </body>
 </html>

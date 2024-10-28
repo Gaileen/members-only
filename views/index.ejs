@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+    <h1>Message Board</h1>
     <% if (!locals.user) { %>
         <h2>Log in to see who wrote these messages</h2>
+        <%- include("partials/errors") %>
         <%- include("partials/login") %>
     <% } %>
 
     <!-- Display msgs as anon if !locals.user -->
-
+    <% if (locals.user) { %>
+        <h3>test</h3>
+    <% } %>
 
     <!-- <%- include("partials/msg_form.ejs") %> -->
 </body>

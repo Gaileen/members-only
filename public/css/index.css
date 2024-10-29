@@ -2,3 +2,8 @@
 .margin-bottom-20 {
     margin-bottom: 20px;
 }
+
+textarea {
+    min-height: 126px;
+    max-width: 372px;
+}

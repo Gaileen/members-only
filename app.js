@@ -6,15 +6,13 @@ app.set("view engine", "ejs");
 
 const passport = require("passport");
 const session = require("./config/session");
-// const flash = require("connect-flash");
-require("./config/passport"); // defined passport middleware
+require("./config/passport"); // include our passport middleware
 
 /* Middleware */
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); // lets us parse easily (req.body...)
 app.use(session);
 app.use(passport.session());
-// app.use(flash());
 app.use((req, res, next) => {
     res.locals.user = req.user;
     next();

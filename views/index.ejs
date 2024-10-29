@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members Page</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <h1>Message Board</h1>
@@ -16,9 +17,19 @@
 
     <!-- Display msgs as anon if !locals.user -->
     <% if (locals.user) { %>
-        <h3>test</h3>
+        <h3>Add to the conversation, <%= user.first_name %>!</h3>
+        <a href="/logout">Log out</a>
     <% } %>
 
-    <!-- <%- include("partials/msg_form.ejs") %> -->
+    <% if (locals.messages) { %>
+        <% messages.forEach(function(msg) { %>
+            <p><%= getName(msg.user_id) %>:</p>
+            <p><%= msg.msg %> (<%= msg.time %>)</p>
+        <% }); %>
+    <% } %>
+
+    <% if (locals.user) { %>
+        <%- include("partials/msg_form.ejs") %>
+    <% } %>
 </body>
 </html>

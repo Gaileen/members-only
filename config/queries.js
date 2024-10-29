@@ -11,16 +11,25 @@ async function selectUser(email) {
     return rows[0];
 }
 
-// only used by passport
 async function getUserById(id) {
     const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
     return rows[0];
 }
 
-//async function getAllMsgs() {}
+async function getAllMsgs() {
+    const { rows } = await pool.query("SELECT * FROM msgs");
+    return rows;
+}
+
+async function insertMsg(user_id, msg) {
+    await pool.query("INSERT INTO msgs (user_id, msg) VALUES ($1, $2)",
+        [user_id, msg]);
+}
 
 module.exports = {
     insertUser,
     selectUser,
     getUserById,
+    getAllMsgs,
+    insertMsg,
 };
